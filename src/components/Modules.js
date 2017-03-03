@@ -18,12 +18,13 @@ const draggableOptions = {
    },
    
    onmove: event => {
-
+    
     const target = event.target;
     let dx = event.dx;
     let dy = event.dy;
     let x,y;
     
+    console.log(target)
     // temporary hack to fix bug with snap to grid feature
     dx = dx > 0 && Math.abs(dx) < cellWidth ? cellWidth : Math.floor(dx/cellWidth)*cellWidth;
     dy = dy > 0 && Math.abs(dy) < cellHeight ? cellHeight : Math.floor(dy/cellHeight)*cellHeight;
@@ -42,7 +43,6 @@ const draggableOptions = {
     // update the posiion attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
-
 
   }
 }
